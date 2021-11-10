@@ -1,0 +1,8 @@
+prefix=/home/polo/OneDrive/5.semester/Index/Education/RIC/robopgave_ws/devel
+
+Name: robopgave_pkg
+Description: Description of robopgave_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
