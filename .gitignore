@@ -3,6 +3,8 @@ CMakeCache.txt
 CMakeFiles
 CMakeScripts
 *.py
+build
+.vscode
 Testing
 Makefile
 cmake_install.cmake
