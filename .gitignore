@@ -4,6 +4,7 @@ CMakeFiles
 CMakeScripts
 build
 .vscode
+.vscodeunused
 Testing
 Makefile
 cmake_install.cmake
