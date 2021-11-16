@@ -1,0 +1,8 @@
+prefix=/home/simon/ROB5/robopgave/robopgave_ws/install
+
+Name: robopgave_pkg
+Description: Description of robopgave_pkg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

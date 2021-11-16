@@ -7,10 +7,11 @@
         "--extension-pkg-whitelist=cv2"],
     "python.autoComplete.extraPaths": [
         "/opt/ros/noetic/lib/python3/dist-packages",
-        "/home/polo/.local/lib/python3.8/site-packages"
+        "/home/simon/.local/lib/python3.8/site-packages"
     ],
     "python.analysis.extraPaths": [
         "/opt/ros/noetic/lib/python3/dist-packages",
-        "/home/polo/.local/lib/python3.8/site-packages"
-    ]
+        "/home/simon/.local/lib/python3.8/site-packages"
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/robopgave_ws/src"
 }

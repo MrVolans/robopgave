@@ -1,8 +1,8 @@
-prefix=/home/polo/OneDrive/5.semester/Index/Education/RIC/robopgave_ws/devel
+prefix=/home/simon/ROB5/robopgave/robopgave_ws/devel
 
 Name: robopgave_pkg
 Description: Description of robopgave_pkg
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/simon/ROB5/robopgave/robopgave_ws/devel/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: roscpp rospy std_msgs
