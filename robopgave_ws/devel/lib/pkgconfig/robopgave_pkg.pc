@@ -1,8 +1,0 @@
-prefix=/home/polo/robopgave/robopgave_ws/devel
-
-Name: robopgave_pkg
-Description: Description of robopgave_pkg
-Version: 0.0.0
-Cflags: -I/home/polo/robopgave/robopgave_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy std_msgs
