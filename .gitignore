@@ -2,9 +2,7 @@ CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
-build
-devel
-install
+
 .vscode
 .vscodeunused
 Testing
