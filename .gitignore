@@ -6,6 +6,8 @@ build
 devel
 install
 .vscode
+devel
+install
 .vscodeunused
 Testing
 Makefile
