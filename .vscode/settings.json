@@ -13,5 +13,6 @@
         "/opt/ros/noetic/lib/python3/dist-packages",
         "/home/simon/.local/lib/python3.8/site-packages"
     ],
-    "cmake.sourceDirectory": "${workspaceFolder}/robopgave_ws/src"
+    "cmake.sourceDirectory": "${workspaceFolder}/robopgave_ws/src",
+    "ros.distro": "noetic"
 }

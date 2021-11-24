@@ -1,6 +1,6 @@
 import rospy
 
-from rospy_tutorials.srv import AddTwoInts
+from robopgave_pkg.srv import AddTwoInts
 
 def handle_add_two_ints(req): #define the add two ints service
     result = req.a + req.b

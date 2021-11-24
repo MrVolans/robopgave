@@ -11,10 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  OpenCV
   message_generation
 )
-find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -161,7 +159,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 
-catkin_install_python(PROGRAMS src/scripts/talker.py src/scripts/listener.py
+catkin_install_python(PROGRAMS src/scripts/talker.py src/scripts/listener.py src/scripts/add_two_ints.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

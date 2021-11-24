@@ -1,4 +1,4 @@
-prefix=/home/simon/ROB5/robopgave/robopgave_ws/install
+prefix=/home/polo/robopgave/robopgave_ws/install
 
 Name: robopgave_pkg
 Description: Description of robopgave_pkg
