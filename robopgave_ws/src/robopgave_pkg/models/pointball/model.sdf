@@ -1,12 +1,25 @@
 <?xml version=2.0?>
 <sdf version=1.4>
 <model name=pointball>
-  <static>true</static>
+  <static>false</static>
     <link name=link>
+    <gravity>true</gravity>
+      <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
       <collision name=collision>
         <geometry>
           <sphere>
-            <radius>4</radius>
+            <radius>0.2</radius>
           </sphere>
         </geometry>
         <surface>
@@ -19,16 +32,15 @@
         </surface>
       </collision>
       <visual name=visual>
-        <cast_shadows>false</cast_shadows>
+        <cast_shadows>true</cast_shadows>
         <geometry>
           <sphere>
-
-            <radius>4</radius>
+            <radius>0.2</radius>
           </sphere>
         </geometry>
         <material>
           <script>
-            <uri>model://pointball/materials/scripts/pointball.material</uri>
+            <uri>./materials/scripts/pointball.material</uri>
             <name>Robopgave/Pointball</name>
           </script>
         </material>
@@ -38,12 +50,12 @@
       <diffuse>1 0 0 1</diffuse>
       <specular>.1 .1 .1 1</specular>
       <attenuation>
-        <range>20</range>
+        <range>10</range>
         <linear>0</linear>
         <constant>0</constant>
         <quadratic>0.01</quadratic>
       </attenuation>
-      <cast_shadows>false</cast_shadows>
+      <cast_shadows>true</cast_shadows>
     </light>
     </link>
   </model>

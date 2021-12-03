@@ -1,18 +1,12 @@
-material Pointball/grasstex
+material Robopgave/Pointball
 {
   technique
   {
     pass
     {
-      ambient 1.0 1.0 1.0 1.0
-      diffuse 1.0 0.0 0.0 1.0
-      specular 0.0 0.0 0.0 0 0
+      ambient 1.0 1.0 1.0
+      diffuse 0.7 0.7 0.7
+      specular 0.1 0.1 0.1 1 1
 
-      texture_unit
-      {
-        texture grass.jpg
-        filtering trilinear
-      }
-    }
   }
 }
