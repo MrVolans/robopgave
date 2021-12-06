@@ -1,37 +1,34 @@
 #!/usr/bin/env python
 import rospy
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist, Pose
+
+def callback(data):
+    rospy.loginfo(rospy.get_caller_id() + 'Pose is %s', data.data) 
 
 def move():
     # Starts a new node
     rospy.init_node('robot_cleaner', anonymous=True)
     velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+    pose_subscriber = rospy.Subscriber("/turtle1/pose", Pose, callback)
     vel_msg = Twist()
 
+    def callback2(data):
+        print("hello")
+
+    pose_subscriber.callback = callback2
     #Receiveing the user's input
     print("Let's move your robot")
     speed = input("Input your speed:")
-    distance = input("Type your distance:")
-    isForward = input("Foward?: ")#True or False
+    destination = input("Type your coordinate: x, y").split(", ")
+    
 
-    #Checking if the movement is forward or backwards
-    if(isForward):
-        vel_msg.linear.x = abs(speed)
-    else:
-        vel_msg.linear.x = -abs(speed)
-    #Since we are moving just in x-axis
-    vel_msg.linear.y = 0
-    vel_msg.linear.z = 0
-    vel_msg.angular.x = 0
-    vel_msg.angular.y = 0
-    vel_msg.angular.z = 0
 
     while not rospy.is_shutdown():
 
         #Setting the current time for distance calculus
         t0 = rospy.Time.now().to_sec()
         current_distance = 0
-
+    
         #Loop to move the turtle in an specified distance
         while(current_distance < distance):
             #Publish the velocity
