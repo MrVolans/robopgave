@@ -38,7 +38,7 @@ while not rospy.is_shutdown():
         ##pose = tf_buffer.canTransform(msg, "map")
         odom_base_tf = tf_buffer.lookup_transform('map', 'base_footprint', rospy.Time())
         robot = Marker()
-        robot.header.frame_id="map"
+        robot.header.frame_id="/map"
         robot.header.stamp=rospy.Time.now()
         # set shape, Arrow: 0; Cube: 1 ; Sphere: 2 ; Cylinder: 3
         robot.type = 2
@@ -65,12 +65,12 @@ while not rospy.is_shutdown():
         robot.pose.orientation.w = 1.0
 
         robot.pose.position = odom_base_tf.transform.translation
-
+        robot.action = Marker.ADD
 
         marker_pub.publish(robot)
-    except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException,):
+    except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
         rate.sleep()
-        print("SOmehitngs FISHY")
+        print()
     continue
 
 
