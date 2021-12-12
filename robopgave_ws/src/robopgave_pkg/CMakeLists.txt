@@ -7,13 +7,13 @@ project(robopgave_pkg)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+find_package(OpenCV REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
   message_generation
   geometry_msgs
-  OpenCV
 )
 
 ## System dependencies are found with CMake's conventions
@@ -106,7 +106,7 @@ generate_messages(
 catkin_package(
 # INCLUDE_DIRS include
 # LIBRARIES robopgave_pkg
- CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs OpenCV
+ CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs
 # DEPENDS system_lib
 )
 
@@ -119,7 +119,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library

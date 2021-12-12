@@ -80,16 +80,7 @@ int main(int argc, char **argv)
     else
       ROS_INFO("The base failed to move forward 1 meter for some reason");
   }
-  popen("rosrun map_server map_saver -f /home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map3 map:=map", "r");
+  //popen("rosrun map_server map_saver -f /home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map3 map:=map", "r");
+  popen("rosrun robopgave_pkg BlobDetect.py")
   return 0;
 }
-
-/*
-Pose(Point(-2.474, 2.619, 0.000), Quaternion(0.000, 0.000, 0.985, 0.174))
-Pose(Point(2.475, 1.504, 0.000), Quaternion(0.000, 0.000, 0.021, 1.000))
-Pose(Point(2.564, 3.002, 0.000), Quaternion(0.000, 0.000, 0.018, 1.000))
-Pose(Point(1.490, -2.749, 0.000), Quaternion(0.000, 0.000, -0.999, 0.034))
-
-Pose(Point(-2.653, -2.379, 0.00), Quaternion(0.000, 0.000, 0.999, 0.052))
-Pose(Point(-2.490, 0.497, 0.000), Quaternion(0.000, 0.000, 0.654, 0.756))
-*/

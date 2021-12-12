@@ -1,5 +1,5 @@
 <launch>
-  <arg name="map_file" default="$(find robopgave_pkg)/maps/map.yaml"/>
+  <arg name="map_file" default="$(find robopgave_pkg)/maps/map3.yaml"/>
   <arg name="open_rviz" default="false"/>
   <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
@@ -39,6 +39,7 @@
     args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
 
   <!-- run automatic exploration here-->
+  <node pkg="simple_navigation_goals" type="simple_navigation_goals" name="goal_publisher"/>
 
 
   <!-- Map server -->

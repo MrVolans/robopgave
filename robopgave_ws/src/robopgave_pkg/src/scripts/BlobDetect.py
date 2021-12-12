@@ -11,7 +11,7 @@ from visualization_msgs.msg import Marker
 
 # Read image
 #im = cv2.imread("/home/simon/ROB5/robopgave/robopgave_ws/src/robopgave_pkg/models/byu/textures/byu.jpg", cv2.IMREAD_COLOR)
-im2 = cv2.imread("/home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map2.pgm", cv2.IMREAD_GRAYSCALE)
+im2 = cv2.imread("/home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map3.pgm", cv2.IMREAD_GRAYSCALE)
 #im = cv2.imread("blob.jpg", cv2.IMREAD_GRAYSCALE)
 
 im =cv2.flip(im2, 0)
@@ -65,8 +65,8 @@ keypoints = detector.detect(im)
 im_with_keypoints = cv2.drawKeypoints(im, keypoints, np.array([]), (255, 0, 0), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 
 # Show blobs
-#cv2.imshow("Keypoints", im_with_keypoints)
-#cv2.waitKey(0)
+cv2.imshow("Keypoints", im_with_keypoints)
+cv2.waitKey(0)
 print("it runs")
 rospy.init_node("goalpublisher")
 marker_pub = rospy.Publisher("/visualization_marker", Marker, queue_size=2)

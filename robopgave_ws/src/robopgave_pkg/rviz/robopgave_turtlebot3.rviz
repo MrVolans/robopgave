@@ -12,6 +12,7 @@ Panels:
         - /Local Map1/Polygon1
         - /Local Map1/Costmap1
         - /Local Map1/Planner1
+        - /Marker1
       Splitter Ratio: 0.5
     Tree Height: 783
   - Class: rviz/Selection
@@ -312,6 +313,14 @@ Visualization Manager:
       Shape: Arrow
       Topic: /move_base_simple/goal
       Unreliable: false
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        /goals: true
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
