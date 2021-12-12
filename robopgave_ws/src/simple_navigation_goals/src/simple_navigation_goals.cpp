@@ -80,7 +80,7 @@ int main(int argc, char **argv)
     else
       ROS_INFO("The base failed to move forward 1 meter for some reason");
   }
-  //popen("rosrun map_server map_saver -f /home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map3 map:=map", "r");
+  popen("rosrun map_server map_saver -f map3 map:=map", "r");
   popen("rosrun robopgave_pkg BlobDetect.py")
   return 0;
 }
