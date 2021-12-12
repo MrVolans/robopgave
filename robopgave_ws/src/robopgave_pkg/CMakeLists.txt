@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
   geometry_msgs
+  OpenCV
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +106,7 @@ generate_messages(
 catkin_package(
 # INCLUDE_DIRS include
 # LIBRARIES robopgave_pkg
- CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs OpenCV
 # DEPENDS system_lib
 )
 
@@ -118,6 +119,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  
 )
 
 ## Declare a C++ library
@@ -160,7 +162,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 
-catkin_install_python(PROGRAMS src/scripts/talker.py src/scripts/listener.py src/scripts/add_two_ints.py src/scripts/RRT_gen.py
+catkin_install_python(PROGRAMS src/scripts/talker.py src/scripts/listener.py src/scripts/add_two_ints.py src/scripts/BlobDetect.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

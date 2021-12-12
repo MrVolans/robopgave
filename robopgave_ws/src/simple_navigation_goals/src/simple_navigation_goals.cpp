@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include "iostream"
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
 #include <geometry_msgs/Pose.h>
@@ -34,17 +35,31 @@ int main(int argc, char **argv)
   {
     ROS_INFO("Waiting for the move_base action server to come up");
   }
-  /*
-  a = {Pose(Point(-2.474, 2.619, 0.000), Quaternion(0.000, 0.000, 0.985, 0.174)),
-Pose(Point(2.475, 1.504, 0.000), Quaternion(0.000, 0.000, 0.021, 1.000)),
-Pose(Point(2.564, 3.002, 0.000), Quaternion(0.000, 0.000, 0.018, 1.000)),
-Pose(Point(1.490, -2.749, 0.000), Quaternion(0.000, 0.000, -0.999, 0.034)),
+  Point point1;
+  point1.x = -2.54;
+  point1.y = 2.619;
 
-Pose(Point(-2.653, -2.379, 0.00), Quaternion(0.000, 0.000, 0.999, 0.052)),
-Pose(Point(-2.490, 0.497, 0.000), Quaternion(0.000, 0.000, 0.654, 0.756))}
-*/
-  std::list<Point> points({Point(-2.474, 2.619, 0.000), Point(2.475, 1.504, 0.000),Point(2.564, 3.002, 0.000),Point(1.490, -2.749, 0.000), Point(-2.653, -2.379, 0.00), Point(-2.490, 0.497, 0.000)});
- Point()
+  Point point2;
+  point2.x = 2.475;
+  point2.y = 1.504;
+
+  Point point3;
+  point3.x = 2.69;
+  point3.y = 2.93;
+
+  Point point4;
+  point4.x = 1.490;
+  point4.y = -2.749;
+
+  Point point5;
+  point5.x = -2.653;
+  point5.y = -2.379;
+
+  Point point6;
+  point6.x = -2.490;
+  point6.y = 0.497;
+
+  std::list<Point> points {point1, point2, point3, point4, point5, point6};
   move_base_msgs::MoveBaseGoal goal;
 
   for (Point g : points)
@@ -54,9 +69,7 @@ Pose(Point(-2.490, 0.497, 0.000), Quaternion(0.000, 0.000, 0.654, 0.756))}
     goal.target_pose.header.frame_id = "map";
     goal.target_pose.header.stamp = ros::Time::now();
 
-    goal.target_pose.pose.position.x = 2.0;
-    goal.target_pose.pose.orientation.w = 1.0;
-
+    goal.target_pose.pose.orientation.w = 1;
     ROS_INFO("Sending goal");
     ac.sendGoal(goal);
 
@@ -67,6 +80,7 @@ Pose(Point(-2.490, 0.497, 0.000), Quaternion(0.000, 0.000, 0.654, 0.756))}
     else
       ROS_INFO("The base failed to move forward 1 meter for some reason");
   }
+  popen("rosrun map_server map_saver -f /home/polo/robopgave/robopgave_ws/src/robopgave_pkg/maps/map3 map:=map", "r");
   return 0;
 }
 
