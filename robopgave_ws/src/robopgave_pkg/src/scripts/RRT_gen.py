@@ -22,9 +22,6 @@ def callback(msg):
 
 
 
-
-
-
 rospy.init_node('pose_listener')
 
 tf_buffer = tf2_ros.Buffer()
@@ -54,7 +51,7 @@ while not rospy.is_shutdown():
         robot.color.g = 1.0
         robot.color.b = 0.0
         robot.color.a = 1.0
-
+    
         # Set the pose of the marker
         robot.pose.position.x = 0
         robot.pose.position.y = 0
